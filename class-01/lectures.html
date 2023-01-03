@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Module 01: Lectures</title>
+  </head>
+  <body>
+    <h1>Course Lecture Videos</h1>
+    <main>
+      <!-- module links go here -->
+    </main>
+
+    <script>
+      fetch('../lectures.json')
+        .then((response) => response.json())
+        .then((data) => document.getElementsByTagName('main')[0].innerHTML = render(data.lectures));
+
+      const formatTitle = (title) => {
+        return title.toLocaleUpperCase();
+      };
+
+      const render = (modules) => {
+        let html = '';
+        for (const [module, classes] of Object.entries(modules)) {
+          html += `<h2>${formatTitle(module)}</h2>\n<ul>`
+          for (let classDay in classes) {
+            html += `<li>${classDay}: <a href="${classes[classDay].primary.link}">${classes[classDay].primary.instructor}</a></li>`;
+          }
+          html += `</ul>`;
+        }
+        return html;
+      }
+    </script>
+  </body>  
+</html>
