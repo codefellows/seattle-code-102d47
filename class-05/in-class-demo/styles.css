@@ -1,0 +1,49 @@
+/* 
+Here is that trick I used to show a border around every single HTML element:
+
+* {
+  border: 2px solid purple;
+} 
+
+*/
+
+section {
+  border: 2px solid rgb(30, 25, 120);
+  background-color: pink;
+  width: 30%;
+  display: inline-block;
+}
+
+header {
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid yellow;
+}
+
+h1 {
+  float: left;
+}
+
+/* id selector */
+#hero { 
+  float: left;
+}
+
+#first-list {
+  background-color: orange;
+}
+
+/* class selector */
+.lower-sections {
+  background-color: rgb(137, 179, 137);
+}
+
+nav ul {
+  background-color: gray;
+}
+
+nav {
+  width: 60%;
+  padding: 10px;
+  margin-left: 250px;
+}
